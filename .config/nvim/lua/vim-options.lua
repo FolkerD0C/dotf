@@ -1,0 +1,13 @@
+vim.cmd("set number relativenumber")
+vim.cmd("set autoindent")
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
+vim.cmd("set smarttab")
+vim.cmd("set mouse=a")
+vim.cmd("set scrolloff=7")
+vim.cmd("set encoding=utf-8")
+vim.cmd("set ignorecase")
+
+vim.cmd("syntax enable")
