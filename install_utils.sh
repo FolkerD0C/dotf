@@ -20,5 +20,5 @@ function get_sudo_pass() {
     #Test password
     SUDO_ASKPASS=$1 sudo -A true > /dev/null
 
-    exit $?
+    return $?
 }

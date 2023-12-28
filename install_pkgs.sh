@@ -36,5 +36,5 @@ else
     echo "Package install did not succeed."
 fi
 
-exit $success
+return $success
 
