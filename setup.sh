@@ -16,10 +16,10 @@ else
 fi
 
 echo_red 'First phase: Install packages'
-bash install_pkgs.sh
+bash install_pkgs.sh "${DOTFILES_DIR}/install_utils.sh"
 
 echo_red 'Second phase: Download files'
-bash download_files.sh
+bash download_files.sh "${DOTFILES_DIR}/install_utils.sh"
 cd $DOTFILES_DIR
 
 echo_red 'Third phase: Clone some repositories'
