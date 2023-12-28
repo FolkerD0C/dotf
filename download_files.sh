@@ -22,7 +22,7 @@ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract
 
-sudo -A ln -fs "{$custom_dir}/squashfs-root/AppRun" /usr/bin/nvim
+sudo -A ln -fs "${custom_dir}/squashfs-root/AppRun" /usr/bin/nvim
 echo_red 'Testing neovim installation'
 nvim --version
 
