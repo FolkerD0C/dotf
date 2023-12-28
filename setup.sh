@@ -27,4 +27,7 @@ bash clone_repos.sh
 
 echo_red 'Fourth phase: Link items'
 bash link_items.sh
+
+#Cleanup
 cd $DOTFILES_DIR
+rm -f $sudo_askpass_file

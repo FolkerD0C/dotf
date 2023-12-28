@@ -15,10 +15,10 @@ function get_sudo_pass() {
     
     #Create askpass file
     echo -e "#!/usr/bin/env bash\necho ${PASS}" > $1
-    chmod u+x $askpass_file
+    chmod u+x $1
 
     #Test password
-    SUDO_ASKPASS=$askpass_file sudo -A true > /dev/null
+    SUDO_ASKPASS=$1 sudo -A true > /dev/null
 
     exit $?
 }
