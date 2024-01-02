@@ -31,3 +31,5 @@ bash link_items.sh
 #Cleanup
 cd $DOTFILES_DIR
 rm -f $sudo_askpass_file
+
+echo_red 'All done, you need to run post_install.sh to install additional packages.'

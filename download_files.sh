@@ -25,6 +25,3 @@ chmod u+x nvim.appimage
 sudo -A ln -fs "${custom_dir}/squashfs-root/AppRun" /usr/bin/nvim
 echo_red 'Testing neovim installation'
 nvim --version
-
-echo_red 'Installing oh-my-zsh'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
