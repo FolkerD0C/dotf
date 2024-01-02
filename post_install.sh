@@ -6,12 +6,12 @@ if [ $# -ne 1 ] ; then
     exit 3
 fi
 
-if [[ -z $(grep 'echo_red' $1) ]] ; then
+if [[ -z $(grep 'echo_red' "$1") ]] ; then
     echo "Function 'echo_red' not found in ${1}, exiting..."
     exit 4
 fi
 
-source $1
+source "$1"
 
 echo_red 'Installing oh-my-zsh'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
