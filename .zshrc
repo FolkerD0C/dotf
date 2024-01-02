@@ -87,7 +87,7 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git zsh-autosuggestions sudo web-search dirhistory zsh-syntax-highlighting zsh-history-substring-search common-aliases wd dotnet)
 
 source $ZSH/oh-my-zsh.sh
-
+source "$HOME/.cargo/env"
 
 # User configuration
 
