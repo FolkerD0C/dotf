@@ -3,8 +3,8 @@ return {
     config = function()
         require("lualine").setup({
             options = {
-                theme = 'gruvbox'
-            }
+                theme = "gruvbox",
+            },
         })
-    end
+    end,
 }

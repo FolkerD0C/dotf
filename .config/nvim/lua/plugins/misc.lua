@@ -1,5 +1,5 @@
 return {
-    'jiangmiao/auto-pairs',
-    'tpope/vim-fugitive',
-    'Yggdroot/indentLine'
+    "jiangmiao/auto-pairs",
+    "tpope/vim-fugitive",
+    "Yggdroot/indentLine",
 }

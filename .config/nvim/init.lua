@@ -14,7 +14,3 @@ vim.opt.rtp:prepend(lazypath)
 require("vim-options")
 require("key-bindings")
 require("lazy").setup("plugins")
-
-if #vim.v.argv == 2 then
-    vim.cmd("Neotree reveal action=focus position=current")
-end
