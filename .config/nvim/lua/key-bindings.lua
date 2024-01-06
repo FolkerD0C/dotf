@@ -8,6 +8,7 @@ vim.keymap.set("n", "<leader><Right>", ":wincmd l<CR>", { remap = false, silent 
 
 -- Some defaults
 vim.keymap.set("n", "<C-s>", ":w<CR>", { remap = false, silent = true })
+vim.keymap.set("n", "<C-S>", ":wa<CR>", { remap = false, silent = true })
 vim.keymap.set("n", "<leader><Esc>", ":q<CR>", { remap = false, silent = true })
 vim.keymap.set("n", "<leader><Tab>", ":bn<CR>")
 vim.keymap.set("n", "<leader><S-Tab>", ":bp<CR>")
