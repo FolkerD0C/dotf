@@ -87,7 +87,6 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git zsh-autosuggestions sudo web-search dirhistory zsh-syntax-highlighting zsh-history-substring-search common-aliases wd dotnet)
 
 source $ZSH/oh-my-zsh.sh
-source "$HOME/.cargo/env"
 
 # User configuration
 
@@ -118,8 +117,6 @@ alias ll="ls -lAh"
 alias r="sudo su"
 alias ep="${=EDITOR} ~/.zshrc"
 alias e="exit"
-alias c="cd /mnt/c/"
-alias wp="cd /mnt/c/Users/User"
 alias n="${=EDITOR}"
 alias omr="omz reload"
 alias lh="ls -lh"
@@ -137,3 +134,6 @@ alias gis="git status"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+if [ -f "${HOME}/.zshrc.priv" ]; then
+  source "${HOME}/.zshrc.priv"
+fi
