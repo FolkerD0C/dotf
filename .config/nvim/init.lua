@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require("global-variables")
+
 require("vim-options")
 require("key-bindings")
 require("lazy").setup("plugins")
