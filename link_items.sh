@@ -2,14 +2,14 @@
 
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 
-DIRECTORIES_TO_MAKE="$(find -type d -path . | cut -c3- | grep -v '\.git')"
+source "${DOTFILES_DIR}/install_utils.sh"
 
-for dir_path in "${DIRECTORIES_TO_MAKE[@]}"; do
-    mkdir -p "${HOME}/${dir_path}"
-done
+DIRECTORIES_TO_MAKE="${HOME}/.config"
 
-FILES_TO_LINK="$(find -type f -path . | cut -c3- | grep -v '^\.git/' | grep -v '\.sh$')"
+echo_red "Attempting to make the following directories: ${DIRECTORIES_TO_MAKE}"
+mkdir -p $DIRECTORIES_TO_MAKE
 
-for file_path in $FILES_TO_LINK; do
-    ln -s -f "${DOTFILES_DIR}/${file_path}" "${HOME}/${file_path}"
+for relative_path in .config/nvim .bashrc .zshrc; do
+  echo_red "Attempting to link the following 2 paths: ${HOME}/${relative_path} -> ${DOTFILES_DIR}/${relative_path}"
+  ln -s -f "${DOTFILES_DIR}/${relative_path}" "${HOME}/${relative_path}"
 done
