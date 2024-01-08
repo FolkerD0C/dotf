@@ -18,7 +18,7 @@ echo_red 'Testing neovim installation'
 nvim --version
 
 echo 'Installing oh-my-zsh'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -- --unattanded
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -- --unattended
 sudo -A chsh -s "$(command -v zsh)" "$USER"
 
 echo_red 'Installing rust, needed by the lua formatter in neovim: stylua'
