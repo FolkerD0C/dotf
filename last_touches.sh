@@ -14,7 +14,10 @@ if [ ! -f "$ZSHRC_PRIV_PATH" ]; then
 # or functions here.
 #
 # Uncomment the following line to have lsp capabilities in neovim.
-# Currently only bash and lua are supported
+# List of supported languages:
+#  - Bash: 'bash'
+#  - C#: 'csharp'
+#  - Lua: 'lua'
 # export NEOVIM_REQUIRED_LANGUAGES='bash,lua'
 #
 # Uncomment the following line to have cargo/rust enabled in your shell
