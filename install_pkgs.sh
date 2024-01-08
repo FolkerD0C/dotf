@@ -14,7 +14,7 @@ echo_red "Attempting an upgrade"
 sudo -A apt-get -y upgrade
 sleep 3
 
-needed_pkgs='zsh exa bat neofetch git curl gcc'
+needed_pkgs='zsh exa bat neofetch git curl gcc g++ unzip'
 
 echo_red "Attempting to install the following packages: [${needed_pkgs}]."
 sudo -A apt-get install -yV --no-install-recommends $needed_pkgs
