@@ -15,11 +15,13 @@ else
     exit 1
 fi
 
+sudo_password="$(grep echo "${sudo_askpass_file}" | sed 's/echo //')"
+
 echo_red 'First phase: Install packages'
 bash install_pkgs.sh
 
 echo_red 'Second phase: Download files'
-bash download_files.sh
+bash download_files.sh "$sudo_password"
 cd "$DOTFILES_DIR"
 
 echo_red 'Third phase: Clone some repositories'
@@ -34,5 +36,3 @@ bash last_touches.sh
 #Cleanup
 cd "$DOTFILES_DIR"
 rm -f "$sudo_askpass_file"
-
-echo_red 'All done, you need to run post_install.sh to install additional packages.'
