@@ -19,12 +19,18 @@ needed_pkgs='zsh exa bat neofetch git curl gcc'
 echo_red "Attempting to install the following packages: [${needed_pkgs}]."
 sudo -A apt-get install -yV --no-install-recommends $needed_pkgs
 
-success=$?
+success_1=$?
 
-if [ "$success" -eq 0 ] ; then
+echo_red "Attempting to install node.js and npm"
+curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -A bash - && sudo -A apt-get install -y nodejs
+success_2=$?
+curl -qL https://www.npmjs.com/install.sh | sudo -A sh
+success_3=$?
+
+if [[ "$success_1" -eq 0 && "$success_2" -eq 0 && "$success_3" -eq 0 ]] ; then
     echo "Package install was successful."
 else
     echo "Package install did not succeed."
 fi
 
-exit "$success"
+exit "$success_1"
