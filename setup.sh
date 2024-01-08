@@ -28,7 +28,7 @@ bash clone_repos.sh
 echo_red 'Fourth phase: Link items'
 bash link_items.sh
 
-echo_Red 'Fifth phase: Last touches'
+echo_red 'Fifth phase: Last touches'
 bash last_touches.sh
 
 #Cleanup
