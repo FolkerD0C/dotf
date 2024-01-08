@@ -5,8 +5,6 @@ if [ $# -ne 1 ]; then
   exit 2
 fi
 
-sudo_password=$1
-
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 
 source "$DOTFILES_DIR"/install_utils.sh
@@ -25,11 +23,8 @@ echo_red 'Testing neovim installation'
 nvim --version
 
 echo 'Installing oh-my-zsh'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" <<EOF
-y
-$sudo_password
-exit
-EOF
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -- --unattanded
+sudo -A chsh -s "$(command -v zsh)" "$USER"
 
 echo_red 'Installing rust, needed by the lua formatter in neovim: stylua'
-echo 1 | sh -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)"
+sh -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" -- -qy
