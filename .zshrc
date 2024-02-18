@@ -1,6 +1,7 @@
-dpkg -s neofetch > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-    neofetch --disable packages
+if dpkg -s neofetch > /dev/null 2>&1; then
+  neofetch --disable packages
+elif pacman -Q neofetch > /dev/null 2>&1; then
+  neofetch
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -37,7 +38,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k" #set by `omz`
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -122,7 +123,6 @@ alias ex="exa --all --color-scale --icons --header --long --group-directories-fi
 alias er="exa --all --color-scale --icons --ignore-glob='.git' --header --long --group-directories-first --tree"
 alias es="exa --icons --group-directories-first"
 alias el="exa --icons --header --long --group-directories-first"
-alias bac="batcat"
 alias gis="git status"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
